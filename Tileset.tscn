@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+
+[node name="Tileset2" type="TileMap"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 1
+collision_layer = 5
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( 131091, 43, 327680, 131092, 43, 655365, 131093, 43, 131079, 131094, 43, 655364, 131095, 43, 327681, 196628, 43, 393220, 196630, 43, 393220, 393237, 43, 327680, 393238, 43, 327681, 786451, 43, 327680, 786452, 43, 7, 786453, 43, 327681 )

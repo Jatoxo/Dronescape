@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Counter2.gd" type="Script" id=4]
+
+[node name="Map" instance=ExtResource( 3 )]
+
+[node name="Enemy" parent="." index="14" instance=ExtResource( 1 )]
+position = Vector2( -320, 0 )
+
+[node name="Enemy2" parent="." index="15" instance=ExtResource( 1 )]
+position = Vector2( 256, 0 )
+
+[node name="Enemy3" parent="." index="16" instance=ExtResource( 1 )]
+position = Vector2( 0, -128 )
+
+[node name="Enemy4" parent="." index="17" instance=ExtResource( 2 )]
+position = Vector2( 0, 128 )
+
+[node name="Counter" type="Node2D" parent="." index="18"]
+script = ExtResource( 4 )
