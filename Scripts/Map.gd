@@ -7,26 +7,21 @@ export(Array, String) var LevelArray := [
 	"res://Scenes/Levels/Level3.tscn",
 	"res://Scenes/Levels/Level4.tscn",
 	"res://Scenes/Levels/Level5.tscn"]
-	
-# Declare member variables here. Examples:
-var North : Vector2 = Vector2(0,-280)
-var East : Vector2 = Vector2(496,0)
-var South : Vector2 = Vector2(0,280)
-var West : Vector2 = Vector2(-496,0)
+
+
+var spawnPos = {
+	"s" : Vector2(0,-280),
+	"w" : Vector2(496,0),
+	"n" : Vector2(0,280),
+	"e" : Vector2(-496,0)
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global.enemycount = get_tree().get_nodes_in_group("Enemy").size()
 	global.Levels +=1
 	$Camera2D/UI/Label2.text = str(global.Levels)
-	if global.compass == 's':
-		$Player.position = North
-	if global.compass == 'n':
-		$Player.position = South
-	if global.compass == 'w':
-		$Player.position = East
-	if global.compass == 'e':
-		$Player.position = West
+	$Player.position = spawnPos[global.compass]
 
 	$Camera2D/UI/TextureProgress.max_value = $Player/Timer.wait_time
 
