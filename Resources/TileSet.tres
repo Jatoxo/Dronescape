@@ -1,9 +1,10 @@
 [gd_resource type="TileSet" load_steps=193 format=2]
 
-[ext_resource path="res://IMAGES/Tileset2.png" type="Texture" id=2]
-
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="StreamTexture" id=193]
+load_path = "res://.import/Tileset2.png-820d5570dc4d5d0371e126c652ba79b1.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 4, 16, 0, 16, 0, 4, 4, 4 )
@@ -577,7 +578,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [resource]
 43/name = "Tileset2.png 43"
-43/texture = ExtResource( 2 )
+43/texture = SubResource( 193 )
 43/tex_offset = Vector2( 0, 0 )
 43/modulate = Color( 1, 1, 1, 1 )
 43/region = Rect2( 128, 192, 32, 32 )
@@ -607,7 +608,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 43/z_index = 0
 44/name = "Tileset2.png 44"
-44/texture = ExtResource( 2 )
+44/texture = SubResource( 193 )
 44/tex_offset = Vector2( 0, 0 )
 44/modulate = Color( 1, 1, 1, 1 )
 44/region = Rect2( 144, 96, 16, 16 )
@@ -621,7 +622,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 44/shapes = [  ]
 44/z_index = 0
 45/name = "Tileset2.png 45"
-45/texture = ExtResource( 2 )
+45/texture = SubResource( 193 )
 45/tex_offset = Vector2( 0, 0 )
 45/modulate = Color( 1, 1, 1, 1 )
 45/region = Rect2( 96, 64, 32, 32 )
@@ -644,7 +645,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 45/shapes = [  ]
 45/z_index = 0
 46/name = "Tileset2.png 46"
-46/texture = ExtResource( 2 )
+46/texture = SubResource( 193 )
 46/tex_offset = Vector2( 0, 0 )
 46/modulate = Color( 1, 1, 1, 1 )
 46/region = Rect2( 0, 0, 144, 224 )
@@ -1802,7 +1803,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 46/z_index = 0
 47/name = "Tileset2.png 47"
-47/texture = ExtResource( 2 )
+47/texture = SubResource( 193 )
 47/tex_offset = Vector2( 0, 0 )
 47/modulate = Color( 1, 1, 1, 1 )
 47/region = Rect2( 96, 192, 16, 16 )

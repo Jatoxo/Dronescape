@@ -21,7 +21,7 @@ func _ready():
 
 func _on_Menu_area_entered(area):
 	global.compass = 'e'
-	get_tree().change_scene("res://Menu.tscn")
+	get_tree().change_scene("res://Scenes/Menu.tscn")
 	pass # Replace with function body.
 
 

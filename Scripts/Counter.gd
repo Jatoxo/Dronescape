@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global.enemycount = 8
+	global.enemycount = get_tree().get_nodes_in_group("Enemy").size()
 	pass # Replace with function body.
 
 

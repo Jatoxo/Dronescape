@@ -1,6 +1,13 @@
 extends Node2D
 var rngesus = RandomNumberGenerator.new()
-var LevelArray := ["res://Level1.tscn","res://Level2.tscn","res://Level3.tscn","res://Level4.tscn","res://Level5.tscn"]
+
+export(Array, String) var LevelArray := [
+	"res://Scenes/Levels/Level1.tscn",
+	"res://Scenes/Levels/Level2.tscn",
+	"res://Scenes/Levels/Level3.tscn",
+	"res://Scenes/Levels/Level4.tscn",
+	"res://Scenes/Levels/Level5.tscn"]
+	
 # Declare member variables here. Examples:
 var North : Vector2 = Vector2(0,-280)
 var East : Vector2 = Vector2(496,0)
@@ -9,6 +16,7 @@ var West : Vector2 = Vector2(-496,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global.enemycount = get_tree().get_nodes_in_group("Enemy").size()
 	global.Levels +=1
 	$Camera2D/UI/Label2.text = str(global.Levels)
 	if global.compass == 's':

@@ -63,7 +63,7 @@ func _on_Area2D2_area_entered(area):
 		$Timer2.start()
 	if global.health == 0:
 		global.compass = 's'
-		get_tree().change_scene(\"res://Menu.tscn\")
+		var _err = get_tree().change_scene(\"res://Scenes/Menu.tscn\")
 	pass # Replace with function body.
 "
 
