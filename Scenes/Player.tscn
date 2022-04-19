@@ -13,6 +13,9 @@ var Bullet : PackedScene = preload(\"Bullet.tscn\")
 var vector : Vector2 = Vector2(0,0)
 var speed : float = 0
 var movement : Vector2 = Vector2.ZERO
+
+signal damage_taken
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.wait_time = global.Reloadtime
@@ -52,10 +55,10 @@ func _process(delta):
 		newBullet.direction = vectorPiss
 		
 
-
 func _on_Area2D2_area_entered(_area):
 	if ($Timer2.time_left <= 0):
 		global.health -= 1
+		emit_signal(\"damage_taken\")
 		$Timer2.start()
 	if global.health == 0:
 		global.compass = 's'

@@ -22,37 +22,14 @@ func _ready():
 	global.Levels +=1
 	$Camera2D/UI/Label2.text = str(global.Levels)
 	$Player.position = spawnPos[global.compass]
-
+	
 	$Camera2D/UI/TextureProgress.max_value = $Player/Timer.wait_time
-
+	
+	update_health()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(global.health < 6):
-		$Camera2D/UI/Sprite6.visible = false
-	else:
-		$Camera2D/UI/Sprite6.visible = true
-	if(global.health < 5):
-		$Camera2D/UI/Sprite5.visible = false
-	else:
-		$Camera2D/UI/Sprite5.visible = true
-	if(global.health < 4):
-		$Camera2D/UI/Sprite4.visible = false
-	else:
-		$Camera2D/UI/Sprite4.visible = true
-	if(global.health < 3):
-		$Camera2D/UI/Sprite3.visible = false
-	else:
-		$Camera2D/UI/Sprite3.visible = true
-	if(global.health < 2):
-		$Camera2D/UI/Sprite2.visible = false
-	else:
-		$Camera2D/UI/Sprite2.visible = true
-	if(global.health < 1):
-		$Camera2D/UI/Sprite.visible = false
-	else:
-		$Camera2D/UI/Sprite.visible = true
-
+	
 	if(global.enemycount == 0):
 		$TileMap.set_cell(-1,-8,-1)
 		$TileMap.set_cell(0,-8,-1)
@@ -62,7 +39,7 @@ func _process(delta):
 		$TileMap.set_cell(0,7,-1)
 		$TileMap.set_cell(13,0,-1)
 		$TileMap.set_cell(13,-1,-1)
-	print($Player/Timer.time_left)
+	#print($Player/Timer.time_left)
 	$Camera2D/UI/TextureProgress.value = $Player/Timer.time_left
 
 
@@ -76,10 +53,6 @@ func _on_Area2D_body_entered(_body):
 	$TileMap.set_cell(13,0,0)
 	$TileMap.set_cell(13,-1,0)
 	
-	
-	pass # Replace with function body.
-
-
 
 
 func _on_WestCheck_area_entered(_area):
@@ -106,3 +79,17 @@ func _on_SouthCheck_area_entered(_area):
 	rngesus.randomize()
 	var _err = get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
 	print("south")
+
+
+func _on_Player_damage_taken() -> void:
+	update_health()
+
+
+func update_health():
+	$Camera2D/UI/Sprite6.visible = global.health > 5
+	$Camera2D/UI/Sprite5.visible = global.health > 4
+	$Camera2D/UI/Sprite4.visible = global.health > 3
+	$Camera2D/UI/Sprite3.visible = global.health > 3
+	$Camera2D/UI/Sprite2.visible = global.health > 1
+	$Camera2D/UI/Sprite.visible = global.health > 0
+	

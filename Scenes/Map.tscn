@@ -166,6 +166,7 @@ position = Vector2( 0, 320 )
 position = Vector2( 0, -4 )
 shape = SubResource( 12 )
 
+[connection signal="damage_taken" from="Player" to="." method="_on_Player_damage_taken"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="WestCheck" to="." method="_on_WestCheck_area_entered"]
 [connection signal="area_entered" from="EastCheck" to="." method="_on_EastCheck_area_entered"]
