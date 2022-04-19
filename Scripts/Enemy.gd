@@ -4,8 +4,9 @@ var rngesus = RandomNumberGenerator.new()
 var vector : Vector2 = Vector2(0,0)
 var randDir = 1
 var movement : Vector2 = Vector2.ZERO
-func _ready():
-	pass # Replace with function body.
+
+
+
 
 func makedie():
 	self.queue_free()
