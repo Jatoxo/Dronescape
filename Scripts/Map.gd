@@ -71,7 +71,7 @@ func _process(delta):
 	$Camera2D/UI/TextureProgress.value = $Player/Timer.time_left
 
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	$TileMap.set_cell(-1,-8,0)
 	$TileMap.set_cell(0,-8,0)
 	$TileMap.set_cell(-15,0,0)
@@ -87,27 +87,27 @@ func _on_Area2D_body_entered(body):
 
 
 
-func _on_WestCheck_area_entered(area):
+func _on_WestCheck_area_entered(_area):
 	global.compass = 'w'
 	rngesus.randomize()
-	get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
+	var _err = get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
 	print("brooooooooooooooooooooooooooooooooken")
 
 
-func _on_EastCheck_area_entered(area):
+func _on_EastCheck_area_entered(_area):
 	global.compass = 'e'
 	rngesus.randomize()
-	get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
+	var _err = get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
 	print("east")
 
-func _on_NorthCheck_area_entered(area):
+func _on_NorthCheck_area_entered(_area):
 	global.compass = 'n'
 	rngesus.randomize()
-	get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
+	var _err = get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
 	print("north")
 
-func _on_SouthCheck_area_entered(area):
+func _on_SouthCheck_area_entered(_area):
 	global.compass = 's'
 	rngesus.randomize()
-	get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
+	var _err = get_tree().change_scene(LevelArray[rngesus.randi_range(0,4)])
 	print("south")

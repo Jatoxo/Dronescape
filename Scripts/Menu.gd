@@ -21,14 +21,14 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	global.compass = 's'
 	global.Levels = -1
 	global.health = global.originalhealth
-	get_tree().change_scene_to(startingLevel)
+	var _err = get_tree().change_scene_to(startingLevel)
 
 
-func _on_Area2D3_area_entered(area):
+func _on_Area2D3_area_entered(_area):
 	get_tree().quit()
 
 
