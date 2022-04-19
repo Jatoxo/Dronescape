@@ -29,5 +29,3 @@ position = Vector2( 256, 0 )
 
 [node name="Enemy8" parent="." index="21" instance=ExtResource( 3 )]
 position = Vector2( 0, -128 )
-
-[node name="Counter" type="Node2D" parent="." index="22"]
